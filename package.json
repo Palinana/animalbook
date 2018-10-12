@@ -1,25 +1,48 @@
 {
   "name": "animalbook",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "mocha server/test",
+    "start": "node server/index.js",
+    "build-client": "webpack",
+    "build-client-watch": "webpack -w",
+    "server": "nodemon server/index.js",
+    "start-dev": "webpack -w & nodemon server/index.js",
+    "seed": "node server/seed.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "express": "^4.14.0",
+    "moment": "^2.20.1",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "sequelize": "^4.33.1",
+    "volleyball": "^1.5.1"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5",
+    "react-test-renderer": "^16.4.0",
+    "sinon": "^5.1.0",
+    "supertest": "^3.1.0",
+    "webpack": "4.19.1"
+  }
 }
