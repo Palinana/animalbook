@@ -11,6 +11,34 @@ const Animal = db.define('animal', {
             notEmpty: true,
         },
     },
+    animal: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        },
+    },
+    state: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        },
+    },
+    gender: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        },
+    },
+    details: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        },
+    },
     image: {
         type: Sequelize.STRING,
         validate: {
