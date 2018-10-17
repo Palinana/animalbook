@@ -13,7 +13,7 @@ app.use(express.static('./client/public'));
 app.get('/api/animals', async (req, res, next) => {
     try {
       const animals = await Animal.findAll();
-      res.json(animals.map(({id, name}) => ({id, name})));
+      res.json(animals);
     } catch (err) {
       next(err);
     }
