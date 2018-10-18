@@ -29,9 +29,9 @@ app.get('/api/animals/:id', async (req, res, next) => {
   }
 });
 
-app.get('/api/animals', async (req, res, next) => {
+app.post('/api/animals', async (req, res, next) => {
   try {
-    const animals = await Animal.create({name: req.body.name});
+    const animals = await Animal.create(req.body);
     res.sendStatus(201).json(animal);
   } catch (err) {
     next(err);
